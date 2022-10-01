@@ -1,6 +1,7 @@
 import random as rd
 import hangman_art as ha
 import hangman_words as hw
+from replit import clear
 
 print(ha.logo)
 word_list = hw.word_list
@@ -19,6 +20,7 @@ end_of_game = False
 lives = 6
 while not end_of_game:
     user_guess = input("\nGuess a letter: ").lower()
+    clear()
     if user_guess in display:
         print(f"\n{user_guess}, You've already tried this one! Try Another One :(")
     for letter in range(chosen_word_len):
@@ -41,3 +43,4 @@ while not end_of_game:
             break
     
     print(f"{' '.join(display)}")
+
